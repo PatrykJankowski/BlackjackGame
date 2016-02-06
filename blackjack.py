@@ -137,7 +137,7 @@ def hit():
         if player_hand.get_value() <= 21:
             player_hand.add_card(deck.deal_card())
         if player_hand.get_value() > 21:
-            outcome = "You have busted! New deal?"
+            outcome = "You lose! New deal?"
             score -= 1
             in_play = False
             print outcome
@@ -151,12 +151,12 @@ def stand():
        
     if in_play:
         if player_hand.get_value() > 21:
-            outcome = "You are busted! New deal?"
+            outcome = "You lose! New deal?"
         elif dealer_hand.get_value() > 21 or player_hand.get_value() > dealer_hand.get_value():
             outcome = "You won! New deal?"
             score += 1
         else:
-            outcome = "You are busted! New deal?"
+            outcome = "You lost! New deal?"
             score -= 1
         print dealer_hand
         print outcome
